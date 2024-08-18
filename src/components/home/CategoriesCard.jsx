@@ -7,7 +7,7 @@ const CategoriesCard = (category) => {
     <>
       <div
         key={category.name}
-        className="font-italiana cursor-pointer flex flex-col gap-2 relative md:w-[350px] h-[450px]  group overflow-hidden   transform transition duration-500 ease-in-out hover:scale-105 hover:shadow-2xl"
+        className="font-italiana cursor-pointer flex flex-col gap-2 relative md:w-[350px] h-[450px]  overflow-hidden   xl:transform xl:transition xl:duration-500 xl:ease-in-out xl:hover:scale-105 xl:hover:shadow-2xl"
       >
         <img
           src={category.img}
