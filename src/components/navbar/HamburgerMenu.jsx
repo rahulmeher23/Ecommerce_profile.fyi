@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { CloseBtn, HamburgerIcon } from '../../assets/AppIcons';
 
 const HamburgerMenu = ({ menuOpen, toggleMenu }) => {
-    const [isOpen, setIsOpen] = useState(false);
 
     return (
         <div className="relative">
@@ -14,6 +12,8 @@ const HamburgerMenu = ({ menuOpen, toggleMenu }) => {
                 <div className="flex justify-start absolute top-0 p-8">
                     <button onClick={toggleMenu} className="text-3xl">&times;</button>
                 </div>
+
+                {/* Nav Menus */}
                 <div className="flex flex-col items-center justify-center h-full space-y-8">
                     <Link to="/" onClick={toggleMenu} className="text-2xl hover:text-gray-400">Home</Link>
                     <Link to="/shop" onClick={toggleMenu} className="text-2xl hover:text-gray-400">Shop</Link>
