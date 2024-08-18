@@ -1,32 +1,33 @@
 import React from "react";
-import heroImage from "../assets/images/heroImage.jpg";
+import { Link } from "react-router-dom";
 
+import clothes from "../assets/images/clothes.jpg";
+import necklace from "../assets/images/necklace.jpg";
+import earrings from "../assets/images/earrings.jpg";
 import CategoriesCard from "../components/home/CategoriesCard";
 import Hero from "../components/home/Hero";
 import { Underline } from "../assets/AppIcons";
-import { Link } from "react-router-dom";
 
 const Home = () => {
     const categoriesDB = [
         {
             id: '1',
             name: "Clothes",
-            img: heroImage,
+            img: clothes,
             description:
                 "Explore our latest collection of luxurious clothes designed to make you stand out.",
         },
         {
             id: '2',
             name: "Necklaces",
-            img: heroImage,
-
+            img: necklace,
             description:
                 "Discover elegant necklaces that add a touch of luxury to any outfit.",
         },
         {
             id: '3',
             name: "Earrings",
-            img: heroImage,
+            img: earrings,
             description:
                 "Browse through our selection of exquisite earrings for every occasion.",
         },
@@ -55,7 +56,7 @@ const Home = () => {
 
             <div className="flex w-full items-center justify-center">
                 <Link to="/products">
-                    <button className="text-2xl p-2 px-10 py-2  text-black border-2 border-black">
+                    <button className="text-2xl p-2 px-10 py-2  text-black border-2 border-black hover:bg-black hover:text-white">
                         EXPLORE ALL
                     </button>
                 </Link>

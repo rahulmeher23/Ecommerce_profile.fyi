@@ -52,7 +52,10 @@ const Navbar = () => {
                                     <CartIcon />
                                 </Link>
                             </div>
-                            <div className='absolute -top-2 -right-2 bg-white text-black p-1 rounded-xl w-5 h-5 flex justify-center items-center'>{totalQuantity}</div>
+                            {
+                                totalQuantity > 0 && <div className='absolute -top-2 -right-2 bg-white text-black p-1 rounded-xl w-5 h-5 flex justify-center items-center'>{totalQuantity}</div>
+                            }
+
                         </div>
                     </div>
                 </div>
