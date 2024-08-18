@@ -24,7 +24,7 @@ const ProductsList = () => {
 
     useEffect(() => {
         // dispatch(fetchProducts())
-        dispatch(() => addProducts(productsDB))
+        dispatch(addProducts(productsDB))
     }, [])
 
 
