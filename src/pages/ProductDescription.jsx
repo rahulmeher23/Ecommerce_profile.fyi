@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { productsDB } from '../database/productsDB';
 import { useDispatch, useSelector, useStore } from 'react-redux';
 
 const ProductDescription = () => {
