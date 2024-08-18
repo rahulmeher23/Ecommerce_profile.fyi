@@ -37,7 +37,7 @@ const ProductCard = (product) => {
                 <Link to={`/product/${product.id}`} key={product?.id} >
                     <img
                         src={product?.image}
-                        alt={product.name}
+                        alt={product?.name}
                         className='w-full h-[450px] object-cover transform transition-transform duration-500 hover:scale-110'
                     />
                 </Link>
@@ -46,7 +46,7 @@ const ProductCard = (product) => {
             {/* product details */}
             <div className='flex flex-col gap-2 p-4'>
                 <p className='text-2xl font-semibold tracking-wider'>
-                    {product?.name.toUpperCase()}
+                    {product?.name?.toUpperCase()}
                 </p>
                 <p className='text-base md:text-xl font-italiana tracking-widest font-semibold h-16 md:h-24 text-gray-600'>
                     {product?.description}

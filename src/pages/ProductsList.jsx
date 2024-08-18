@@ -12,18 +12,11 @@ import { productsDB } from '../database/productsDB';
 const ProductsList = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    // const {products, loading} = useSelector
     const { items, totalCost } = useSelector(state => state.cart)
-    const { products } = useSelector(state => state.products)
-    const [cartItems, setCartItems] = useState();
 
     console.log("items :", items, "totalCost: ", totalCost)
 
-
-    console.log(products)
-
     useEffect(() => {
-        // dispatch(fetchProducts())
         dispatch(addProducts(productsDB))
     }, [])
 
@@ -41,7 +34,7 @@ const ProductsList = () => {
                     </div>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5 xl:gap-10 2xl:gap-10'>
-                    {products.length > 0 && products.map((product) => {
+                    {productsDB.length > 0 && productsDB.map((product) => {
                         return (
                             <ProductCard {...product} />
                         );
