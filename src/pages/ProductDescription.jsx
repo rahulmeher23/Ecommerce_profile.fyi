@@ -9,7 +9,28 @@ const ProductDescription = () => {
     console.log(id);
     const { products, loading } = useSelector(state => state.products)
     const product = products.find((prod) => prod.id === id);
+    const store = useStore();
+    const rehydrated = store.getState()._persist.rehydrated;
 
+    useEffect(() => {
+        // If products are not loaded and rehydration is complete, fetch them
+        if (rehydrated && products.length === 0) {
+            dispatch(fetchProducts());
+        }
+    }, [dispatch, products.length, rehydrated]);
+
+    if (!rehydrated) {
+        return <div>Loading...</div>;
+    }
+
+    // Display loading state while fetching
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (!product) {
+        return <div>Product not found</div>;
+    }
 
     const { name, image, price, description } = product;
 
