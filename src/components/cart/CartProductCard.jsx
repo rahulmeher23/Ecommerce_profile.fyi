@@ -1,6 +1,6 @@
 import React from 'react'
 import { AddIcon, CloseBtn, DeleteIcon, MinusIcon } from '../../assets/AppIcons';
-import { decreaseQty, increaseQty } from '../../redux/slices/cartSlice';
+import { decreaseQty, increaseQty, removeItem } from '../../redux/slices/cartSlice';
 import { useDispatch } from 'react-redux';
 
 const CartProductCard = ({ product }) => {
@@ -17,7 +17,7 @@ const CartProductCard = ({ product }) => {
                 <div className='h-[95%] xl:h-[90%] flex-1  xl:p-2 flex flex-col justify-between gap-5'>
                     <div className='flex justify-between'>
                         <p className='text-lg xl:text-2xl'>{name.toUpperCase()}</p>
-                        <div className='w-5 h-5 mt-1 mr-1 md:w-7 md:h-7 cursor-pointer hover:opacity-100  bg-gray rounded-full opacity-30'><CloseBtn /></div>
+                        <div className='w-5 h-5 mt-1 mr-1 md:w-7 md:h-7 cursor-pointer hover:opacity-100  bg-gray rounded-full opacity-30' onClick={() => dispatch(removeItem(id))}><CloseBtn /></div>
                     </div>
                     <div className='flex items-center justify-start gap-5'>
                         <div className='w-6 h-6 md:w-8 md:h-8 md:p-2 cursor-pointer rounded-full hover:bg-gray  border-gray border text-black  ' onClick={() => dispatch(decreaseQty(id))}>

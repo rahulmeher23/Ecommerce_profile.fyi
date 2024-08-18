@@ -47,9 +47,11 @@ const Navbar = () => {
                         </div>
 
                         <div className='relative'>
-                            <div className="w-8 h-8" title='Cart'> <Link to="/products">
-                                <CartIcon />
-                            </Link></div>
+                            <div className="w-8 h-8" title='Cart'>
+                                <Link to="/cart">
+                                    <CartIcon />
+                                </Link>
+                            </div>
                             <div className='absolute -top-2 -right-2 bg-white text-black p-1 rounded-xl w-5 h-5 flex justify-center items-center'>{totalQuantity}</div>
                         </div>
                     </div>
