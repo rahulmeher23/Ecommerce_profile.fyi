@@ -6,9 +6,12 @@ import { SearchIcon } from '../../assets/AppIcons'
 import { AccountIcon } from '../../assets/AppIcons'
 import { Link, useLocation } from 'react-router-dom'
 import HamburgerMenu from './HamburgerMenu'
+import { useDispatch, useSelector } from 'react-redux';
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const dispatch = useDispatch();
+    const { items, totalQuantity, totalCost } = useSelector(state => state.cart)
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -31,10 +34,24 @@ const Navbar = () => {
                         </Link>
                     </div>
                     <div className="flex gap-10">
-                        <div href="/products" className="hidden sm:flex  h-6 "><ShopIcon /></div>
-                        <div href="#" className="hidden sm:flex  h-6"><WishlistIcon /></div>
-                        <div href="#" className="hidden sm:flex  h-6"><AccountIcon /></div>
-                        <div href="/cart" className=" h-6"><CartIcon /></div>
+                        <div className="hidden sm:flex  w-8 h-8" title='Shop'>
+                            <Link to="/products">
+                                <ShopIcon />
+                            </Link>
+                        </div>
+                        <div className="hidden sm:flex  w-8 h-8" title='Wishlist'>
+                            <WishlistIcon />
+                        </div>
+                        <div className="hidden sm:flex  w-8 h-8" title='Account'>
+                            <AccountIcon />
+                        </div>
+
+                        <div className='relative'>
+                            <div className="w-8 h-8" title='Cart'> <Link to="/products">
+                                <CartIcon />
+                            </Link></div>
+                            <div className='absolute -top-2 -right-2 bg-white text-black p-1 rounded-xl w-5 h-5 flex justify-center items-center'>{totalQuantity}</div>
+                        </div>
                     </div>
                 </div>
 
