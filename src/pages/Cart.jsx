@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { clearCart } from "../redux/slices/cartSlice";
 import { Star, Underline } from '../assets/AppIcons';
-import CartProductCard from '../components/cart/CartProductcard';
+import CartProductCard from '../components/cart/CartProductCard';
 
 const Cart = () => {
     const [loading, setLoading] = useState(false);
