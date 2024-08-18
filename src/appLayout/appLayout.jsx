@@ -21,10 +21,6 @@ const Layout = () => {
                 <Footer />
             </div> */}
         </div>
-
-
-
-
     )
 }
 
