@@ -1,0 +1,53 @@
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Underline } from '../assets/AppIcons';
+import axios from 'axios';
+import toast from 'react-hot-toast';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem } from '../redux/slices/cartSlice';
+import { fetchProducts } from '../redux/slices/productsSlice';
+import ProductCard from '../components/products/ProductCard';
+
+const ProductsList = () => {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    // const {products, loading} = useSelector
+    const { items, totalCost } = useSelector(state => state.cart)
+    const { products } = useSelector(state => state.products)
+    const [cartItems, setCartItems] = useState();
+
+    console.log("items :", items, "totalCost: ", totalCost)
+
+
+    console.log(products)
+
+    useEffect(() => {
+        dispatch(fetchProducts())
+    }, [])
+
+
+
+    return (
+        <>
+            <div className='flex flex-col justify-center items-center p-5 md:p-5 xl:p-10 gap-5 md:gap-10'>
+                <div className="flex flex-col w-full item-center justify-center">
+                    <p className="text-center text-2xl xl:text-3xl font-medium">EXPLORE OUR PRODUCTS</p>
+                    <div className="flex justify-center items-center  h-10">
+                        <div className="w-1/2 md:w-1/6">
+                            <Underline />
+                        </div>
+                    </div>
+                </div>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5 xl:gap-10 2xl:gap-10'>
+                    {products.length > 0 && products.map((product) => {
+                        return (
+                            <ProductCard {...product} />
+                        );
+                    })}
+                </div>
+            </div>
+        </>
+    );
+}
+
+export default ProductsList;
