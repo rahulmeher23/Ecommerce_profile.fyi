@@ -40,8 +40,6 @@ const Cart = () => {
 
     return (
         <>
-
-
             {
                 items.length == 0 ? (
                     <div className="font flex flex-col items-center justify-center h-full flex-1 w-full font-tenor gap-5">

@@ -5,8 +5,9 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem } from '../redux/slices/cartSlice';
-import { fetchProducts } from '../redux/slices/productsSlice';
+import { addProducts, fetchProducts } from '../redux/slices/productsSlice';
 import ProductCard from '../components/products/ProductCard';
+import { productsDB } from '../database/productsDB';
 
 const ProductsList = () => {
     const navigate = useNavigate();
@@ -22,7 +23,8 @@ const ProductsList = () => {
     console.log(products)
 
     useEffect(() => {
-        dispatch(fetchProducts())
+        // dispatch(fetchProducts())
+        dispatch(() => addProducts(productsDB))
     }, [])
 
 

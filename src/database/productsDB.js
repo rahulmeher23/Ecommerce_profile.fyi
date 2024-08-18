@@ -14,7 +14,7 @@ import marble_harmony from "../assets/images/marble_harmony.jpg";
 
 export const productsDB = [
   {
-    id: uuidv4(),
+    id: "hlgAxASsliDBZ2RtXYl0",
     name: "Peach Linen ",
     img: rose_linen,
     description:
@@ -22,7 +22,7 @@ export const productsDB = [
     price: 199,
   },
   {
-    id: uuidv4(),
+    id: "qeAxzXcGyPJPRPd6EnJ0",
     name: "Noir Muse",
     description:
       " A sleek sleeveless black top perfect for a modern, minimalist look.",
@@ -30,7 +30,7 @@ export const productsDB = [
     price: 199,
   },
   {
-    id: uuidv4(),
+    id: "ZsCNw1soRFQu8IUMv7ru",
     name: "Urban Classic",
     description:
       " A timeless oversized white shirt that embodies contemporary elegance.",
@@ -38,7 +38,7 @@ export const productsDB = [
     price: 199,
   },
   {
-    id: uuidv4(),
+    id: "RpPwd0oolu35KS2x7mFH",
     name: "Beige Jacket",
     description:
       " A warm brown puffer jacket ideal for exploring the outdoors on chilly days.",
@@ -46,7 +46,7 @@ export const productsDB = [
     price: 199,
   },
   {
-    id: uuidv4(),
+    id: "6Gi3UQG0cHCOkmzDx4xC",
     name: "Midnight Tank",
     description:
       " A sleek sleeveless black top perfect for a modern, minimalist look.",
@@ -54,7 +54,7 @@ export const productsDB = [
     price: 199,
   },
   {
-    id: uuidv4(),
+    id: "1mD7Yd3w4ycV3XdJISq1",
     name: "Ivory Grace",
     description:
       " An elegant off-white top/dress that exudes sophistication and simplicity.",
@@ -62,7 +62,7 @@ export const productsDB = [
     price: 199,
   },
   {
-    id: uuidv4(),
+    id: "YWaLa9fJ9VnWUXbY1yqH",
     name: "Gilded Harmony",
     description:
       "A set of gold jewelry pieces that blend modern minimalism with classic elegance.",
@@ -70,7 +70,7 @@ export const productsDB = [
     price: 199,
   },
   {
-    id: uuidv4(),
+    id: "4i82pKt40HbWeh1gLvf5",
     name: "Vintage Glamour",
     img: vintage_glamour,
     description:
@@ -79,7 +79,7 @@ export const productsDB = [
     category: "jewellery",
   },
   {
-    id: uuidv4(),
+    id: "c1NtloDxH06e8Uv8nLsD",
     name: "Marble Harmony",
     img: marble_harmony,
     description:
@@ -87,7 +87,7 @@ export const productsDB = [
     price: 199,
   },
   {
-    id: uuidv4(),
+    id: "9gH6IOhMF9BplOZygPoL",
     name: "Silver Curve",
     img: silver_curve,
     description:
@@ -95,7 +95,7 @@ export const productsDB = [
     price: 199,
   },
   {
-    id: uuidv4(),
+    id: "N1mjXkfPBX9HU9RNQGbq",
     name: "Pearl Arc",
     description:
       "An earring that combines an organic-shaped gold stud with a graceful pearl drop.",
@@ -103,7 +103,7 @@ export const productsDB = [
     price: 199,
   },
   {
-    id: uuidv4(),
+    id: "GDuvrqWvyls3UmrJBu0R",
     name: "Golden Pebble",
     img: golden_pebble,
     description:

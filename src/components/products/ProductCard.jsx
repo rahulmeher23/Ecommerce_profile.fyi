@@ -2,11 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import toast from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
-import { addItem } from '../../redux/slices/cartSlice';
+import { addItem, removeItem } from '../../redux/slices/cartSlice';
 
 const ProductCard = (product) => {
     const dispatch = useDispatch();
     const { products } = useSelector(state => state.products)
+    const { items } = useSelector(state => state.cart)
 
     const handleAddtoCartBtn = (product) => {
         if (product) {
@@ -14,6 +15,15 @@ const ProductCard = (product) => {
             toast.success('Item Added to Cart!')
         } else {
             toast.error('Failed to Add to Cart!')
+        }
+    }
+
+    const handleRemovefromCartBtn = (id) => {
+        if (product) {
+            dispatch(removeItem(id));
+            toast.success('Item Deleted from Cart!')
+        } else {
+            toast.error('Failed to Remove from Cart!')
         }
     }
 
@@ -42,13 +52,22 @@ const ProductCard = (product) => {
                     ${product?.price}
                 </div>
                 <div className='flex items-center justify-center'>
-                    <button onClick={() => handleAddtoCartBtn(product)} className='bg-green text-white z-20 cursor-pointer rounded-md py-2 px-3 text-sm md:text-xl  transform transition-transform duration-300 hover:scale-105'>
-                        ADD TO CART
-                    </button>
+                    {
+                        items.some((item) => item.id == product.id) ? (
+                            <button onClick={() => handleRemovefromCartBtn(product.id)} className='bg-red text-white z-20 cursor-pointer rounded-md py-2 px-3 text-sm md:text-sm  transform transition-transform duration-300 hover:scale-105'>
+                                REMOVE FROM CART
+                            </button>) : (
+                            <button onClick={() => handleAddtoCartBtn(product)} className='bg-green text-white z-20 cursor-pointer rounded-md py-2 px-3 text-sm md:text-sm  transform transition-transform duration-300 hover:scale-105'>
+                                ADD TO CART
+                            </button>
+                        )
+                    }
+
                 </div>
             </div>
             <div className='absolute inset-0 bg-white opacity-0 transition-opacity duration-500 hover:opacity-10 rounded-lg'></div>
         </div>
+
     )
 }
 
