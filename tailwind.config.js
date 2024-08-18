@@ -21,7 +21,7 @@ export default {
     },
     backgroundImage: {
       "hero-img": "url('/src/assets/images/heroImage.jpg')",
-      "mobile-hero-img": "url('src/assets/images/noir_muse.jpg')",
+      "mobile-hero-img": "url('/src/assets/images/noir_muse.jpg')",
     },
   },
   plugins: [],
