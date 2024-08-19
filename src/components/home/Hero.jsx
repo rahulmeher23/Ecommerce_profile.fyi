@@ -15,11 +15,13 @@ const Hero = () => {
                     </div>
                 </div>
 
-                <button className="mt-8 px-4 py-3 tracking-widest bg-white  sm:bg-black text-black sm:text-white text-lg font-semibold hover:bg-white hover:text-black border border-white transition-all duration-300">
-                    <Link to="/products">
+                <Link to="/products">
+                    <button className="mt-8 px-4 py-3 tracking-widest bg-white  sm:bg-black text-black sm:text-white text-lg font-semibold hover:bg-white hover:text-black border border-white transition-all duration-300">
+
                         Shop Now
-                    </Link>
-                </button>
+                    </button>
+                </Link>
+
             </div>
         </div>
     );

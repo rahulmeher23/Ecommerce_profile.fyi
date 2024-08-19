@@ -1,41 +1,38 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem, removeItem } from '../../redux/slices/cartSlice';
-import { productsDB } from '../../database/productsDB';
 
 const ProductCard = (product) => {
     const dispatch = useDispatch();
-    // const { products } = useSelector(state => state.products)
-    const { items } = useSelector(state => state.cart)
+    const { items } = useSelector(state => state.cart);
 
     // Function to add item to cart
     const handleAddtoCartBtn = (product) => {
         if (product) {
             dispatch(addItem(product));
-            toast.success('Item Added to Cart!')
+            toast.success('Item Added to Cart!');
         } else {
-            toast.error('Failed to Add to Cart!')
+            toast.error('Failed to Add to Cart!');
         }
-    }
+    };
 
     // Function to remove item from cart
     const handleRemovefromCartBtn = (id) => {
         if (id) {
             dispatch(removeItem(id));
-            toast.success('Item Deleted from Cart!')
+            toast.success('Item Removed from Cart!');
         } else {
-            toast.error('Failed to Remove from Cart!')
+            toast.error('Failed to Remove from Cart!');
         }
-    }
+    };
 
     return (
-        <div className='product-wrapper relative flex flex-col font-tenor md:w-[320px] lg:w-[320px]  xl:w-[400px] min-h-[670px] gap-3 bg-white shadow-lg rounded-lg md:transform md:transition-transform duration-300 hover:scale-105 hover:shadow-2xl'>
-
+        <div className='product-wrapper relative flex flex-col font-tenor md:w-[320px] lg:w-[320px] xl:w-[400px] min-h-[670px] gap-3 bg-white shadow-lg rounded-lg md:transform md:transition-transform duration-300 md:hover:scale-105 md:hover:shadow-2xl'>
             {/* product Image */}
             <div className='overflow-hidden z-20 cursor-pointer rounded-t-lg'>
-                <Link to={`/product/${product.id}`} key={product?.id} >
+                <Link to={`/product/${product.id}`} key={product?.id}>
                     <img
                         src={product?.image}
                         alt={product?.name}
@@ -62,22 +59,21 @@ const ProductCard = (product) => {
                 {/* Add or remove button depending on cart state */}
                 <div className='flex items-center justify-center'>
                     {
-                        items.some((item) => item.id == product.id) ? (
-                            <button onClick={() => handleRemovefromCartBtn(product.id)} className='bg-red text-white z-20 cursor-pointer rounded-md py-2 px-3 text-sm md:text-sm  transform transition-transform duration-300 hover:scale-105'>
+                        items.some((item) => item.id === product.id) ? (
+                            <button onClick={() => handleRemovefromCartBtn(product?.id)} className='bg-red text-white z-20 cursor-pointer rounded-md py-2 px-3 text-sm md:text-sm transform transition-transform duration-300 hover:scale-105'>
                                 REMOVE
-                            </button>) : (
-                            <button onClick={() => handleAddtoCartBtn(product)} className='bg-green text-white z-20 cursor-pointer rounded-md py-2 px-3 text-sm md:text-sm  transform transition-transform duration-300 hover:scale-105'>
+                            </button>
+                        ) : (
+                            <button onClick={() => handleAddtoCartBtn(product)} className='bg-green text-white z-20 cursor-pointer rounded-md py-2 px-3 text-sm md:text-sm transform transition-transform duration-300 hover:scale-105'>
                                 ADD TO CART
                             </button>
                         )
                     }
-
                 </div>
             </div>
             <div className='absolute inset-0 bg-white opacity-0 transition-opacity duration-500 hover:opacity-10 rounded-lg'></div>
         </div>
+    );
+};
 
-    )
-}
-
-export default ProductCard
+export default ProductCard;

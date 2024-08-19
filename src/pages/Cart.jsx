@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { clearCart } from "../redux/slices/cartSlice";
-import { Star, Underline } from '../assets/AppIcons';
+import { Coupon, Star, Underline } from '../assets/AppIcons';
 import CartProductCard from '../components/cart/CartProductCard';
 
 const Cart = () => {
@@ -19,9 +19,7 @@ const Cart = () => {
         toast.success('Clicked')
     };
 
-    const shipping = 150;
-    const tax = 150;
-    const total = 150;
+
 
     const placeOrder = () => {
         setShowModal(true);
@@ -99,23 +97,17 @@ const Cart = () => {
                                         ))}
                                     </ul>
                                     <div className="mt-6 border-t pt-6 space-y-2">
-                                        <div className="flex justify-between">
-                                            <span className='text-lg'>Subtotal</span>
-                                            <span className='text-lg'>${totalCost.toFixed(2)}</span>
-                                        </div>
-                                        <div className="flex justify-between">
-                                            <span className='text-lg'>Shipping</span>
-                                            <span className='text-lg'>${shipping.toFixed(2)}</span>
-                                        </div>
-
                                         <div className="flex justify-between font-bold text-lg mt-2">
                                             <span className='text-lg text-primary'>EST. TOTAL</span>
                                             <span className='text-lg text-primary'>${totalCost}</span>
                                         </div>
                                     </div>
                                     <Link to="/payment-successful">
-                                        <button className="mt-6 w-full bg-black text-white py-3 rounded-lg text-lg" onClick={placeOrder}>
-                                            Proceed to Checkout
+                                        <button className="mt-6 w-full bg-black text-white py-3 rounded-lg text-lg" onClick={() => {
+                                            dispatch(clearCart());
+                                            placeOrder()
+                                        }}>
+                                            ORDER
                                         </button>
                                     </Link>
                                 </div>

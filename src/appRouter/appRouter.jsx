@@ -5,8 +5,13 @@ import ProductsList from "../pages/ProductsList";
 import ProductDescription from "../pages/ProductDescription";
 import Cart from "../pages/Cart";
 import OrderPage from "../pages/OrderPage";
+import PageNotFound from "../pages/PageNotFound";
 
 export const appRouter = createBrowserRouter([
+    {
+        path: '*',
+        element: <PageNotFound />
+    },
     {
         path: '',
         element: <Layout />,

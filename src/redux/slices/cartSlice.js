@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import toast from "react-hot-toast";
 
 const initialState = {
   items: [],
@@ -59,9 +60,10 @@ const cartSlice = createSlice({
         state.totalQuantity -= 1;
         state.totalCost -= existingItem.price;
       } else if (existingItem && existingItem.quantity === 1) {
-        state.items = state.items.filter((item) => item.id !== id);
-        state.totalQuantity -= 1;
-        state.totalCost -= existingItem.price;
+        // state.items = state.items.filter((item) => item.id !== id);
+        // state.totalQuantity -= 1;
+        // state.totalCost -= existingItem.price;
+        toast.error("Minimum 1 quantity is required.");
       }
     },
     clearCart: (state) => {

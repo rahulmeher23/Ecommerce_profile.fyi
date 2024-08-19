@@ -14,10 +14,10 @@ const CartProductCard = ({ product }) => {
                     <img src={image} alt="img" className='h-full w-[150px] xl:w-full object-cover' />
                 </div>
 
-                <div className='h-[95%] xl:h-[90%] flex-1  xl:p-2 flex flex-col justify-between gap-5'>
+                <div className='h-[90%] xl:h-[90%] flex-1  xl:p-2 flex flex-col justify-between gap-5'>
                     <div className='flex justify-between'>
                         <p className='text-lg xl:text-2xl'>{name.toUpperCase()}</p>
-                        <div className='w-5 h-5 mt-1 mr-1 md:w-7 md:h-7 cursor-pointer hover:opacity-100  bg-gray rounded-full opacity-30' onClick={() => dispatch(removeItem(id))}><CloseBtn /></div>
+                        <div className='w-3 h-3 mt-1 mr-1 md:w-7 md:h-7 cursor-pointer hover:opacity-100  bg-gray rounded-full opacity-30' onClick={() => dispatch(removeItem(id))}><CloseBtn /></div>
                     </div>
                     <div className='flex items-center justify-start gap-5'>
                         <div className='w-6 h-6 md:w-8 md:h-8 md:p-2 cursor-pointer rounded-full hover:bg-gray  border-gray border text-black  ' onClick={() => dispatch(decreaseQty(id))}>

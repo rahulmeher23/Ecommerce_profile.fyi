@@ -49,6 +49,7 @@ const CategoriesCard = (category) => {
           <p className=" font-italiana text-white tracking-widest text-lg mb-4">
             {category.description}
           </p>
+
         </div>
 
         <div className='sm:hidden mb-4'>

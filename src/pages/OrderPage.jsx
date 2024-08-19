@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Tick, CloseBtn } from '../assets/AppIcons';
+import { Tick, CloseBtn, Coupon } from '../assets/AppIcons';
 import { ClipLoader } from 'react-spinners';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
@@ -26,9 +26,12 @@ const OrderPage = () => {
     useEffect(() => {
         setTimeout(() => {
             setLoading(false)
-            toast.success("Payment Successful!")
             setModalVisible(true)
         }, [1000])
+    }, [])
+
+    useEffect(() => {
+        toast.success("Payment Successful!")
     }, [])
 
     const paymentId = Math.floor(100000 + Math.random() * 900000);
@@ -65,7 +68,7 @@ const OrderPage = () => {
 
                         {isModalVisible && (
                             <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-                                <div className="bg-white rounded-lg shadow-lg p-6  w-[80%]  md:w-[400px] relative flex flex-col items-center justify-center gap-5">
+                                <div className="bg-white rounded-lg shadow-lg p-6  w-[90%]  md:w-[400px] relative flex flex-col items-center justify-center gap-5">
                                     <button
                                         className="absolute top-4 right-4 z-20 text-black w-8 h-8 hover:bg-gray hover:opacity-50  p-1 rounded-full "
                                         onClick={closeModal}
@@ -76,7 +79,7 @@ const OrderPage = () => {
                                     <div className="flex justify-center items-center m-auto">
                                         <span className=" text-primary w-16 h-16 m-auto"><Tick /></span>
                                     </div>
-                                    <p className="text-center text-lg w-[80%] flex items-center justify-center">Your payment was successful. The order will be delivered with 3-4 buisness days.</p>
+                                    <p className="text-center text-lg w-[80%] flex items-center justify-center">Your payment was successful. The order will be delivered within 3-4 buisness days.</p>
                                     <div className='text-center text-lg'>HAPPY SHOPPING!</div>
                                     <p className="text-center  text-gray-500 mb-6 text-medium text-lg">ORDER ID:  {paymentId}</p>
                                     <div className="flex justify-between">
@@ -85,7 +88,6 @@ const OrderPage = () => {
                                                 className="bg-black text-white py-2 px-8  z-20"
                                                 onClick={closeModal}
                                             >
-
                                                 Shop More
                                             </button>
                                         </Link>
