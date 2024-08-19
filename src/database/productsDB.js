@@ -19,7 +19,7 @@ export const productsDB = [
     image: rose_linen,
     description:
       " A sleek sleeveless black top perfect for a modern, minimalist look.",
-    price: 199,
+    price: 59,
   },
   {
     id: "qeAxzXcGyPJPRPd6EnJ0",
@@ -27,7 +27,7 @@ export const productsDB = [
     description:
       " A sleek sleeveless black top perfect for a modern, minimalist look.",
     image: noir_muse,
-    price: 199,
+    price: 599,
   },
   {
     id: "ZsCNw1soRFQu8IUMv7ru",
@@ -35,7 +35,7 @@ export const productsDB = [
     description:
       " A timeless oversized white shirt that embodies contemporary elegance.",
     image: urban_classic,
-    price: 199,
+    price: 299,
   },
   {
     id: "RpPwd0oolu35KS2x7mFH",
@@ -43,7 +43,7 @@ export const productsDB = [
     description:
       " A warm brown puffer jacket ideal for exploring the outdoors on chilly days.",
     image: beige_jacket,
-    price: 199,
+    price: 259,
   },
   {
     id: "6Gi3UQG0cHCOkmzDx4xC",
@@ -51,7 +51,7 @@ export const productsDB = [
     description:
       " A sleek sleeveless black top perfect for a modern, minimalist look.",
     image: product_2,
-    price: 199,
+    price: 89,
   },
   {
     id: "1mD7Yd3w4ycV3XdJISq1",
@@ -59,7 +59,7 @@ export const productsDB = [
     description:
       " An elegant off-white top/dress that exudes sophistication and simplicity.",
     image: autumn_collection_1,
-    price: 199,
+    price: 699,
   },
   {
     id: "YWaLa9fJ9VnWUXbY1yqH",
@@ -67,7 +67,7 @@ export const productsDB = [
     description:
       "A set of gold jewelry pieces that blend modern minimalism with classic elegance.",
     image: glided_harmony,
-    price: 199,
+    price: 549,
   },
   {
     id: "4i82pKt40HbWeh1gLvf5",
@@ -75,7 +75,7 @@ export const productsDB = [
     image: vintage_glamour,
     description:
       "A jewelry set that blends vintage-inspired charms with modern gold chains.",
-    price: 199,
+    price: 3369,
     category: "jewellery",
   },
   {
@@ -84,7 +84,7 @@ export const productsDB = [
     image: marble_harmony,
     description:
       "A layered necklace set featuring a marbled stone pendant and a gold coin.",
-    price: 199,
+    price: 1999,
   },
   {
     id: "9gH6IOhMF9BplOZygPoL",
@@ -92,7 +92,7 @@ export const productsDB = [
     image: silver_curve,
     description:
       "A smooth, rounded silver hoop with a minimalist design for timeless style.",
-    price: 199,
+    price: 399,
   },
   {
     id: "N1mjXkfPBX9HU9RNQGbq",
@@ -100,7 +100,7 @@ export const productsDB = [
     description:
       "An earring that combines an organic-shaped gold stud with a graceful pearl drop.",
     image: pearl_arc,
-    price: 199,
+    price: 259,
   },
   {
     id: "GDuvrqWvyls3UmrJBu0R",
