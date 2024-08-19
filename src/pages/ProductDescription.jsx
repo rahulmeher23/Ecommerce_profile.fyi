@@ -55,21 +55,21 @@ const ProductDescription = () => {
                             data-testid="loader"
                         />  </div>
                 ) : (
-                    <div className='font-tenor flex flex-col justify-between flex-1 h-full lg:p-10'>
-                        <div className='h-[85%] md:h-[55%] lg:h-[50%] flex flex-col lg:grid lg:grid-cols-2 gap-2 lg:gap-10'>
+                    <div className='font-tenor flex flex-col justify-between lg:p-10'>
+                        <div className='h-[75%] md:h-[55%] lg:h-[50%] flex flex-col lg:grid lg:grid-cols-2 gap-2 lg:gap-10'>
                             {/* Product Image */}
-                            <div className='h-[80%] md:h-[50%] lg:h-[500px] '>
-                                <div className='flex justify-center items-center h-full md:rounded-lg'>
-                                    <img
-                                        src={image}
-                                        alt={name}
-                                        className='w-full max-w-[600px] h-full lg:h-[80%] object-cover  xl:transform xl:transition-transform duration-300 xl:hover:scale-110 md:rounded-lg'
-                                    />
-                                </div>
+                            <div className='h-[70%] md:h-[50%] lg:h-[500px] flex justify-center items-center  md:rounded-lg'>
+                                {/* <div className='flex justify-center items-center h-full md:rounded-lg'> */}
+                                <img
+                                    src={image}
+                                    alt={name}
+                                    className='w-full max-w-[600px] h-full lg:h-[80%] object-cover  xl:transform xl:transition-transform duration-300 xl:hover:scale-110 md:rounded-lg'
+                                />
+                                {/* </div> */}
                             </div>
 
                             {/* Product Details */}
-                            <div className='px-4 flex sm:px-10  p-10 flex-col justify-center gap-2 '>
+                            <div className='  px-4 flex sm:px-10   flex-col justify-center gap-2 '>
                                 <div className='lg:flex  lg:flex-col lg:justify-between lg:h-[40%]'>
                                     <div className=''>
                                         <div className='flex flex-col gap-2'>
@@ -89,11 +89,11 @@ const ProductDescription = () => {
                                     <div className='hidden md:flex'>
                                         {
                                             items.some((item) => item.id === product.id) ? (
-                                                <button onClick={() => handleRemovefromCartBtn(product?.id)} className='bg-red text-white z-20 cursor-pointer rounded-md py-2 px-3 text-sm md:text-sm transform transition-transform duration-300 hover:scale-105'>
-                                                    REMOVE
+                                                <button onClick={() => handleRemovefromCartBtn(product?.id)} className='bg-black text-white z-20 cursor-pointer rounded-md py-2 px-3 text-sm md:text-sm transform transition-transform duration-300 hover:scale-105'>
+                                                    REMOVE FROM CART
                                                 </button>
                                             ) : (
-                                                <button onClick={() => handleAddtoCartBtn(product)} className='bg-green text-white z-20 cursor-pointer rounded-md py-2 px-3 text-sm md:text-sm transform transition-transform duration-300 hover:scale-105'>
+                                                <button onClick={() => handleAddtoCartBtn(product)} className='bg-black text-white z-20 cursor-pointer rounded-md py-2 px-3 text-sm md:text-sm transform transition-transform duration-300 hover:scale-105'>
                                                     ADD TO CART
                                                 </button>
                                             )
@@ -105,7 +105,7 @@ const ProductDescription = () => {
                             </div>
                         </div>
 
-                        <div className='md:hidden w-full'>
+                        <div className=' md:hidden w-full'>
                             {
                                 items.some((item) => item.id === product.id) ? (
                                     <button onClick={() => handleRemovefromCartBtn(product?.id)} className='bg-black text-white z-20 cursor-pointer rounded-md w-full  py-3 text-center text-xl md:text-sm transform transition-transform duration-300 hover:scale-105'>
@@ -118,7 +118,7 @@ const ProductDescription = () => {
                                 )
                             }
                         </div>
-                    </div>
+                    </div >
                 )
             }
         </>

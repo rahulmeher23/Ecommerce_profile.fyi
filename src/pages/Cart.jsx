@@ -64,7 +64,7 @@ const Cart = () => {
                             </div>
                         </div>
                         <div className='grid grid-cols-1 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-4 gap-5 xl:gap-10 '>
-                            {/* Cart Items */}
+                            {/* Cart Items/prodcut card */}
                             <div className='md:col-span-3 lg:col-span-4 xl:col-span-3 flex flex-col  gap-3 md:gap-10'>
                                 <div className=' flex flex-col gap-3 md:gap-10'>
                                     {
