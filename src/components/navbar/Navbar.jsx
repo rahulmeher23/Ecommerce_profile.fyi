@@ -39,10 +39,10 @@ const Navbar = () => {
                                 <ShopIcon />
                             </Link>
                         </div>
-                        <div className="hidden sm:flex  w-8 h-8" title='Wishlist'>
+                        <div className="hidden lg:flex  w-8 h-8" title='Wishlist'>
                             <WishlistIcon />
                         </div>
-                        <div className="hidden sm:flex  w-8 h-8" title='Account'>
+                        <div className="hidden lg:flex  w-8 h-8" title='Account'>
                             <AccountIcon />
                         </div>
 
