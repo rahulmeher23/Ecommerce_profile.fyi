@@ -8,17 +8,7 @@ const OrderPage = () => {
     const [isModalVisible, setModalVisible] = useState(false);
     const [loading, setLoading] = useState(true)
 
-    // useEffect(() => {
-    //     // Show the modal after 1.5 seconds
-    //     const timer = setTimeout(() => {
-    //         setModalVisible(true);
-    //     }, 1500);
-
-
-    // Cleanup the timer if the component is unmounted
-    //     return () => clearTimeout(timer);
-    // }, []);
-
+    //function for losing the modal
     const closeModal = () => {
         setModalVisible(false);
     };
@@ -28,6 +18,7 @@ const OrderPage = () => {
             setLoading(false)
             setModalVisible(true)
         }, [1000])
+
     }, [])
 
     useEffect(() => {
@@ -39,6 +30,7 @@ const OrderPage = () => {
     return (
         <>
             {
+                //If loading is true, show loader
                 loading ? (
                     <div className='h-[80vh] w-full flex items-center justify-center'>
                         <ClipLoader
@@ -50,22 +42,22 @@ const OrderPage = () => {
                             data-testid="loader"
                         />
                     </div>
-                ) : (
-                    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
+                ) : ( //else display order page
+                    <div className="flex-1 flex flex-col items-center justify-center bg-gray-100 p-4">
 
                         <div className='flex flex-col justify-center items-center'>
-                            <h1 className="text-3xl font-bold text-gray-800 mb-6">
+                            <h1 className="text-3xl font-bold text-center text-gray-800 mb-6 ">
                                 Thank you for shopping with us!
                             </h1>
 
-                            <button className='text-black border border-black hover:bg-black  hover:text-white px-3 py-2 text-semibold text-2xl'>
+                            <button className='text-black border border-black hover:bg-black hover:text-white px-3 py-2 text-semibold text-2xl'>
                                 <Link to="/products">
                                     Back to Home
                                 </Link>
                             </button>
                         </div>
 
-
+                        {/* Payment succeessful modal */}
                         {isModalVisible && (
                             <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
                                 <div className="bg-white rounded-lg shadow-lg p-6  w-[90%]  md:w-[400px] relative flex flex-col items-center justify-center gap-5">

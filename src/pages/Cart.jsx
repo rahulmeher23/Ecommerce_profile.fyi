@@ -14,13 +14,7 @@ const Cart = () => {
     const dispatch = useDispatch();
     const { items, totalQuantity, totalCost } = useSelector(state => state.cart)
 
-    const handleCloseModal = () => {
-        setShowModal(false);
-        toast.success('Clicked')
-    };
-
-
-
+    //func for placing the order
     const placeOrder = () => {
         setShowModal(true);
         setLoading(true);
@@ -38,7 +32,7 @@ const Cart = () => {
 
     return (
         <>
-            {
+            {   //if cart is empty, show empty msg
                 items.length == 0 ? (
                     <div className="font flex flex-col items-center justify-center h-[80vh] flex-1 w-full font-tenor gap-5">
                         <h1 className=" text-3xl">Cart is Empty!</h1>
@@ -53,7 +47,7 @@ const Cart = () => {
                             </button>
                         </Link>
                     </div>
-                ) : (
+                ) : ( // else show cart items
                     <div className='font-tenor flex flex-col  p-5 xl:p-10'>
                         <div className="flex flex-col w-full item-center justify-center mt-5 ">
                             <p className="text-center text-2xl md:text-3xl tracking-wider">CHECKOUT</p>
@@ -75,7 +69,7 @@ const Cart = () => {
                                         })
                                     }
                                 </div>
-                                <div className='bg-red text-white text-xl font-medium p-2 w-[150px] self-end' onClick={() => dispatch(clearCart())}>DELETE ALL</div>
+                                <div className='bg-red text-center  text-white text-base md:text-xl font-medium p-2  md:w-[150px] self-end' onClick={() => dispatch(clearCart())}>DELETE ALL</div>
 
                             </div>
 

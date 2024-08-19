@@ -32,7 +32,6 @@ const Home = () => {
             description:
                 "Browse through our selection of exquisite earrings for every occasion.",
         },
-
     ];
 
     console.log(productsDB)
@@ -41,7 +40,6 @@ const Home = () => {
     return (
         <div className="flex flex-col items-center justify-center h-full flex-1 mb-10">
             <Hero />
-
             <div className="flex flex-col item-center justify-center font-tenor tracking tracking-wider font-bold  p-10 gap-10 ">
                 <div className="flex flex-col w-full item-center justify-center">
                     <p className="text-center text-2xl md:text-3xl">EXPLORE CATEGORIES</p>
@@ -51,6 +49,8 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* Category section in Home page */}
                 <div className="grid grid-cols-1 xl:grid-cols-3 gap-10">
                     {categoriesDB.map((category) => (
                         <CategoriesCard {...category} />

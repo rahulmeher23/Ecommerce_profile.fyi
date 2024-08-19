@@ -88,6 +88,7 @@ const ProductDescription = () => {
                                             </div>
                                         </div>
 
+                                        {/* add, remove from cart buttons in tablets and above  */}
                                         <div className='hidden md:flex'>
                                             {
                                                 items.some((item) => item.id === product.id) ? (
@@ -108,15 +109,22 @@ const ProductDescription = () => {
                                 </div>
                             </div>
 
+                            {/* add, remove from cart buttons in mobiles  */}
                             <div className=' md:hidden w-full'>
                                 {
                                     items.some((item) => item.id === product.id) ? (
                                         <button onClick={() => handleRemovefromCartBtn(product?.id)} className='bg-black text-white z-20 cursor-pointer w-full  py-3 text-center text-xl md:text-sm transform transition-transform duration-300 hover:scale-105'>
-                                            REMOVE FROM CART
+                                            <div className='flex gap-5 items-center justify-center '>
+                                                <p className='text-white w-6 h-6'><ShopIcon /></p>
+                                                <p> REMOVE FROM CART</p>
+                                            </div>
                                         </button>
                                     ) : (
                                         <button onClick={() => handleAddtoCartBtn(product)} className='bg-black text-white z-20 cursor-pointer w-full  py-3 text-center text-xl md:text-sm transform transition-transform duration-300 hover:scale-105'>
-                                            ADD TO CART
+                                            <div className='flex gap-5 items-center justify-center '>
+                                                <p className='text-white w-6 h-6'><ShopIcon /></p>
+                                                <p>ADD TO CART</p>
+                                            </div>
                                         </button>
                                     )
                                 }
@@ -125,11 +133,7 @@ const ProductDescription = () => {
                     )
                 }
             </div>
-
         </>
-
-
-
     );
 };
 
