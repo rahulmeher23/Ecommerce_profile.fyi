@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom'
 import toast from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem, removeItem } from '../../redux/slices/cartSlice';
+import { productsDB } from '../../database/productsDB';
 
 const ProductCard = (product) => {
     const dispatch = useDispatch();
-    const { products } = useSelector(state => state.products)
+    // const { products } = useSelector(state => state.products)
     const { items } = useSelector(state => state.cart)
 
     // Function to add item to cart

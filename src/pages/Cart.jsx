@@ -42,14 +42,14 @@ const Cart = () => {
         <>
             {
                 items.length == 0 ? (
-                    <div className="font flex flex-col items-center justify-center h-full flex-1 w-full font-tenor gap-5">
+                    <div className="font flex flex-col items-center justify-center h-[80vh] flex-1 w-full font-tenor gap-5">
                         <h1 className=" text-3xl">Cart is Empty!</h1>
                         <Link to="/products">
                             <button
                                 onClick={() => {
                                     filterDispatch({ type: "CATEGORY", payload: "All" });
                                 }}
-                                className="px-5 py-2 border-2 boreder-black text-black hover:bg-black"
+                                className="px-5 py-2 border-2 boreder-black text-black hover:bg-black hover:text-white"
                             >
                                 SHOP NOW!
                             </button>
@@ -65,10 +65,10 @@ const Cart = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='grid grid-cols-1 2xl:grid-cols-4 gap-5 xl:gap-10 '>
+                        <div className='grid grid-cols-1 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-4 gap-5 xl:gap-10 '>
                             {/* Cart Items */}
-                            <div className='2xl:col-span-3 flex flex-col  gap-3 md:gap-8'>
-                                <div>
+                            <div className='md:col-span-3 lg:col-span-4 xl:col-span-3 flex flex-col  gap-3 md:gap-10'>
+                                <div className=' flex flex-col gap-3 md:gap-10'>
                                     {
                                         items.map((prod) => {
                                             return (
@@ -82,8 +82,8 @@ const Cart = () => {
                             </div>
 
                             {/* order summary */}
-                            <div className='col-span-1 '>
-                                <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md mx-auto">
+                            <div className='md:col-span-2 lg:col-span-2 xl:col-span-1 '>
+                                <div className="bg-white border border-black p-6 rounded-lg shadow-lg w-full max-w-md mx-auto">
                                     <div className='text-lg font-medium md:font-semibold md:text-2xl text-center'>
                                         SUMMARY
                                         <div className='w-2/4 h-10 m-auto'>
@@ -93,31 +93,30 @@ const Cart = () => {
                                     <ul className="space-y-4">
                                         {items.map((item) => (
                                             <li key={item.id} className="flex justify-between">
-                                                <span>{item.name} x {item.quantity}</span>
-                                                <span>${item.price * item.quantity}</span>
+                                                <span className='text-lg'>{item.name} x {item.quantity}</span>
+                                                <span className='text-lg'>${item.price * item.quantity}</span>
                                             </li>
                                         ))}
                                     </ul>
                                     <div className="mt-6 border-t pt-6 space-y-2">
                                         <div className="flex justify-between">
-                                            <span>Subtotal</span>
-                                            <span>${totalCost.toFixed(2)}</span>
+                                            <span className='text-lg'>Subtotal</span>
+                                            <span className='text-lg'>${totalCost.toFixed(2)}</span>
                                         </div>
                                         <div className="flex justify-between">
-                                            <span>Shipping</span>
-                                            <span>${shipping.toFixed(2)}</span>
+                                            <span className='text-lg'>Shipping</span>
+                                            <span className='text-lg'>${shipping.toFixed(2)}</span>
                                         </div>
-                                        <div className="flex justify-between">
-                                            <span>Tax</span>
-                                            <span>${tax?.toFixed(2) || 50}</span>
-                                        </div>
+
                                         <div className="flex justify-between font-bold text-lg mt-2">
-                                            <span>Total</span>
-                                            <span>${total?.toFixed(2) || 1500}</span>
+                                            <span className='text-lg text-primary'>EST. TOTAL</span>
+                                            <span className='text-lg text-primary'>${totalCost}</span>
                                         </div>
                                     </div>
-                                    <button className="mt-6 w-full bg-primary text-white py-3 rounded-lg text-lg" onClick={placeOrder}>
-                                        Proceed to Checkout
+                                    <button className="mt-6 w-full bg-black text-white py-3 rounded-lg text-lg" onClick={placeOrder}>
+                                        <Link to="/payment-successful">
+                                            Proceed to Checkout
+                                        </Link>
                                     </button>
                                 </div>
                             </div>

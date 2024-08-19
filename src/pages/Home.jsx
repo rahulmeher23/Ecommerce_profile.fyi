@@ -7,6 +7,7 @@ import earrings from "../assets/images/earrings.jpg";
 import CategoriesCard from "../components/home/CategoriesCard";
 import Hero from "../components/home/Hero";
 import { Underline } from "../assets/AppIcons";
+import { productsDB } from "../database/productsDB";
 
 const Home = () => {
     const categoriesDB = [
@@ -34,6 +35,9 @@ const Home = () => {
 
     ];
 
+    console.log(productsDB)
+
+
     return (
         <div className="flex flex-col items-center justify-center h-full flex-1 mb-10">
             <Hero />
@@ -42,7 +46,7 @@ const Home = () => {
                 <div className="flex flex-col w-full item-center justify-center">
                     <p className="text-center text-2xl md:text-3xl">EXPLORE CATEGORIES</p>
                     <div className="flex justify-center items-center  h-10">
-                        <div className="w-1/2 md:w-1/4">
+                        <div className="w-1/2    xl:w-1/4">
                             <Underline />
                         </div>
                     </div>
