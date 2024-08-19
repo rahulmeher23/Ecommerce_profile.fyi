@@ -113,11 +113,11 @@ const Cart = () => {
                                             <span className='text-lg text-primary'>${totalCost}</span>
                                         </div>
                                     </div>
-                                    <button className="mt-6 w-full bg-black text-white py-3 rounded-lg text-lg" onClick={placeOrder}>
-                                        <Link to="/payment-successful">
+                                    <Link to="/payment-successful">
+                                        <button className="mt-6 w-full bg-black text-white py-3 rounded-lg text-lg" onClick={placeOrder}>
                                             Proceed to Checkout
-                                        </Link>
-                                    </button>
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
 

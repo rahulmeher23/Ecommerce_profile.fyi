@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Tick, CloseBtn } from '../assets/AppIcons';
 import { ClipLoader } from 'react-spinners';
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const OrderPage = () => {
     const [isModalVisible, setModalVisible] = useState(false);
@@ -25,6 +26,7 @@ const OrderPage = () => {
     useEffect(() => {
         setTimeout(() => {
             setLoading(false)
+            toast.success("Payment Successful!")
             setModalVisible(true)
         }, [1000])
     }, [])
@@ -78,14 +80,15 @@ const OrderPage = () => {
                                     <div className='text-center text-lg'>HAPPY SHOPPING!</div>
                                     <p className="text-center  text-gray-500 mb-6 text-medium text-lg">ORDER ID:  {paymentId}</p>
                                     <div className="flex justify-between">
-                                        <button
-                                            className="bg-black text-white py-2 px-8  z-20"
-                                            onClick={closeModal}
-                                        >
-                                            <Link to="/products">
+                                        <Link to="/products">
+                                            <button
+                                                className="bg-black text-white py-2 px-8  z-20"
+                                                onClick={closeModal}
+                                            >
+
                                                 Shop More
-                                            </Link>
-                                        </button>
+                                            </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
