@@ -13,15 +13,19 @@ import ClipLoader from "react-spinners/ClipLoader";
 const ProductsList = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const { items, totalCost } = useSelector(state => state.cart)
-    const [loading, setLoading] = useState(true)
+    const { items, totalCost } = useSelector(state => state.cart);
+    // const { products } = useSelector(state => state)
+    // console.log(products);
+    const { products, loading } = useSelector(state => state.products);
+    // const [loading, setLoading] = useState(true)
 
-    console.log("items :", items, "totalCost: ", totalCost)
-    useEffect(() => {
-        setTimeout(() => {
-            setLoading(false)
-        }, [1000])
-    }, [])
+    console.log("items :", items, "totalCost: ", totalCost);
+    console.log("products :", products, "loading: ", loading);
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         setLoading(false)
+    //     }, [1000])
+    // }, [])
 
     return (
         <>
@@ -49,7 +53,7 @@ const ProductsList = () => {
 
                         {/* each Product card */}
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5 xl:gap-10 2xl:gap-10'>
-                            {productsDB.length > 0 && productsDB.map((product) => {
+                            {products.length > 0 && products.map((product) => {
                                 return (
                                     <ProductCard {...product} />
                                 );

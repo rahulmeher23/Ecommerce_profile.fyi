@@ -34,7 +34,7 @@ const Home = () => {
         },
     ];
 
-    console.log(productsDB)
+    // console.log(productsDB)
 
 
     return (
