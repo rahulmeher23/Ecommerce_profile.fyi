@@ -6,11 +6,22 @@ import ProductDescription from "../pages/ProductDescription";
 import Cart from "../pages/Cart";
 import OrderPage from "../pages/OrderPage";
 import PageNotFound from "../pages/PageNotFound";
+import Login from "../pages/Login";
+import Signup from "../pages/Signup";
+import AuthGuard from "../components/authGuard/AuthGuard";
 
 export const appRouter = createBrowserRouter([
     {
         path: '*',
         element: <PageNotFound />
+    },
+    {
+        path: '/login',
+        element: <Login />
+    },
+    {
+        path: '/signup',
+        element: <Signup />
     },
     {
         path: '',
