@@ -6,9 +6,10 @@ import ProductDescription from "../pages/ProductDescription";
 import Cart from "../pages/Cart";
 import OrderPage from "../pages/OrderPage";
 import PageNotFound from "../pages/PageNotFound";
-import Login from "../pages/Login";
-import Signup from "../pages/Signup";
 import AuthGuard from "../components/authGuard/AuthGuard";
+import Login from "../pages/auth/Login";
+import Signup from "../pages/auth/Signup";
+import Signup2 from "../pages/auth/Signup2";
 
 export const appRouter = createBrowserRouter([
     {
@@ -21,7 +22,8 @@ export const appRouter = createBrowserRouter([
     },
     {
         path: '/signup',
-        element: <Signup />
+        // element: <Signup />
+        element: <Signup2 />
     },
     {
         path: '',

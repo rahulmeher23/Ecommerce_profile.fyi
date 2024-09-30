@@ -12,6 +12,8 @@ export default {
       gray: "#888888",
       green: "#84CC16",
       red: "#DC2626",
+      'gradient-start': '#ff4b2b',
+      'gradient-end': '#ff416c',
     },
     extend: {
       fontFamily: {
