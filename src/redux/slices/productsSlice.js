@@ -7,7 +7,7 @@ const initialState = {
   error: "null",
 };
 
-axios.defaults.baseURL = `https://open-fashion-express.vercel.app/`;
+axios.defaults.baseURL = `https://open-fashion-express.vercel.app`;
 
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
