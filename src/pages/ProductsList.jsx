@@ -17,20 +17,20 @@ const ProductsList = () => {
     // const { products } = useSelector(state => state)
     // console.log(products);
     const { products, loading } = useSelector(state => state.products);
-    // const [loading, setLoading] = useState(true)
+    const [loader, setLoader] = useState(true)
 
     console.log("items :", items, "totalCost: ", totalCost);
     console.log("products :", products, "loading: ", loading);
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setLoading(false)
-    //     }, [1000])
-    // }, [])
+    useEffect(() => {
+        setTimeout(() => {
+            setLoader(false)
+        }, [1000])
+    }, [])
 
     return (
         <>
             {
-                loading ? (
+                loading && loader ? (
                     <div className='h-[80vh] w-full flex items-center justify-center'>
                         <ClipLoader
                             color="#000"

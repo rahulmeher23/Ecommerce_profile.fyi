@@ -7,7 +7,7 @@ const initialState = {
   error: "null",
 };
 
-axios.defaults.baseURL = `https://open-fashion-express.vercel.app`;
+axios.defaults.baseURL = `https://open-fashion-express.vercel.app/api/v1`;
 
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
@@ -44,7 +44,7 @@ const productsSlice = createSlice({
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.loading = false;
-        state.products = action.payload;
+        state.products = action.payload.data;
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.error = action.payload || "Failed to fetch Products!";
