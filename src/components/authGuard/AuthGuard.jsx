@@ -1,10 +1,12 @@
 import React from 'react'
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 
 const AuthGuard = ({ children }) => {
-    const isAuthenticated = false;
+    const accessToken = localStorage.getItem('accessToken');
+    const isAuthenticated = accessToken ? true : false
+    const location = useLocation()
     return (
-        isAuthenticated ? ({ children }) : (<Navigate to='/login' />)
+        isAuthenticated ? (children) : (<Navigate to='/login' state={{ from: location }} />)
     )
 }
 

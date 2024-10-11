@@ -44,7 +44,7 @@ export const appRouter = createBrowserRouter([
             },
             {
                 path: "cart",
-                element: <Cart />
+                element: <AuthGuard><Cart /></AuthGuard>
             },
             {
                 path: "payment-successful",

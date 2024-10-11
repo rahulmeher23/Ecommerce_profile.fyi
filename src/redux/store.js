@@ -3,6 +3,7 @@ import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // Default localStorage
 import { combineReducers } from "redux";
 import cartReducer from "./slices/cartSlice";
+import userReducer from "./slices/userSlice";
 import productsReducer from "./slices/productsSlice";
 import axios from "axios";
 
@@ -12,6 +13,7 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
+  user:  userReducer,
   cart: cartReducer,
   products: productsReducer,
 });

@@ -55,7 +55,7 @@ const ProductsList = () => {
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5 xl:gap-10 2xl:gap-10'>
                             {products.length > 0 && products.map((product) => {
                                 return (
-                                    <ProductCard {...product} />
+                                    <ProductCard {...product}  key={product?.id}/>
                                 );
                             })}
                         </div>

@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import axiosInstance from "../../api/axiosInstance";
 
 const initialState = {
   products: [],
@@ -7,7 +7,6 @@ const initialState = {
   error: "null",
 };
 
-axios.defaults.baseURL = `https://open-fashion-express.vercel.app/api/v1`;
 
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
@@ -15,7 +14,7 @@ export const fetchProducts = createAsyncThunk(
     console.log("enterd prod slice");
     try {
       console.log("enterd try slice");
-      const response = await axios.get("/products");
+      const response = await axiosInstance.get("/products");
       console.log("response", response);
 
       return response.data;

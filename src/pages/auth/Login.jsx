@@ -1,8 +1,21 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Logo } from "../../assets/AppIcons";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../../redux/slices/userSlice";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const {state} = useLocation()
+  const location = state ? state?.from?.pathname : "/";
+
+  console.log("location", location)
+  console.log("state", state)
+
+  const [isTestUser, setTestUser] = useState(false)
   // State to manage form inputs
   const [formData, setFormData] = useState({
     email: "",
@@ -10,7 +23,7 @@ const Login = () => {
   });
 
   // Handle form field changes
-  const handleChange = (e) => {
+  const handleChange = (e) => { 
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -18,11 +31,38 @@ const Login = () => {
     });
   };
 
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // Handle form submissionn
+  const handleSubmit = async (e) => {
+
+    if(e) {
+      e.preventDefault();
+    }
     console.log("Form Data Submitted:", formData);
+
+    try {
+      const result = await dispatch(loginUser(formData, location));
+        // setTimeout(() => {
+        //   console.log("navigate location", location)
+        //   navigate(`${location}`)
+        // }, 1000)
+        
+    } catch (error) {
+      console.error("Login Error", error);
+    }
   };
+
+  const handleTestUserLogin = async (e) => {
+    e.preventDefault();
+    setFormData({ email: "test@gmail.com", password: "12345678" });
+    setTestUser(true)
+  };
+
+  useEffect(() => {
+
+    if(isTestUser) {
+      handleSubmit();
+    }
+  }, [isTestUser])
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-[#f2f2f2]">
@@ -38,6 +78,9 @@ const Login = () => {
 
           <form onSubmit={handleSubmit} className="w-full">
             <div className="mb-4">
+              <label htmlFor="email" className="text-gray-600 font-medium">
+                Email
+              </label>
               <input
                 type="email"
                 name="email"
@@ -48,6 +91,9 @@ const Login = () => {
               />
             </div>
             <div className="mb-4">
+              <label htmlFor="password" className="text-gray-600 font-medium">
+                Password
+              </label>
               <input
                 type="password"
                 name="password"
@@ -64,13 +110,16 @@ const Login = () => {
             </div>
             <button
               type="submit"
-              className="w-full bg-[#F77D0A] text-white p-3 rounded hover:bg-[#d66f09] transition-colors"
+              // className="w-full bg-[#F77D0A] text-white p-3 rounded hover:bg-[#d66f09] transition-colors"
+              className="w-full  text-white p-3 rounded bg-black font-semibold transition-colors"
             >
               Sign In
             </button>
             <button
               type="button"
-              className="w-full bg-[#FF7F50] text-white p-3 rounded mt-2 hover:bg-[#e66e48] transition-colors"
+              // className="w-full bg-[#FF7F50] text-white p-3 rounded mt-2 hover:bg-[#e66e48] transition-colors"
+              className="w-full border border-black text-black  p-3 rounded mt-2  transition-colors"
+              onClick={handleTestUserLogin}
             >
               Login as Test User
             </button>

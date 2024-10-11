@@ -8,8 +8,14 @@ import CategoriesCard from "../components/home/CategoriesCard";
 import Hero from "../components/home/Hero";
 import { Underline } from "../assets/AppIcons";
 import { productsDB } from "../database/productsDB";
+import { useSelector } from "react-redux";
 
 const Home = () => {
+
+    const user = useSelector(state => state.user)
+
+
+    console.log("user", user)
     const categoriesDB = [
         {
             id: '1',
